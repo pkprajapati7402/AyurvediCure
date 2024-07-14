@@ -34,11 +34,11 @@ Explore the project here: [AyurvediCure](https://pkprajapati7402.github.io/Ayurv
 
 ## Repository Stats 📊
 
-- **Repository Size**: 50 MB
+- **Repository Size**: 3 KB
 - **Commits**: 150+
 - **Contributors**: 5+
-- **Issues**: 10 open, 50 closed
-- **Pull Requests**: 20 open, 100 merged
+- **Issues**: 2 open, 7 closed
+- **Pull Requests**: 2 open, 39 merged
 
 ## Contributing 🤝
 
