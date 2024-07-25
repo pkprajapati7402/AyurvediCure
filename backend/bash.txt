@@ -1,0 +1,5 @@
+**set up your project and install the necessary dependencies:
+bash**
+
+npm init -y
+npm install express mongoose bcryptjs jsonwebtoken dotenv
