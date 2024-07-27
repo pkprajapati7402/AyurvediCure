@@ -42,6 +42,8 @@
 	<!-- Styles -->
 	<link type="text/css" rel="stylesheet" href="css/plugins8a54.css?ver=1.0.0" />
 	<link type="text/css" rel="stylesheet" href="css/style8a54.css?ver=1.0.0" />
+	<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places"></script>
+
 	<!-- !Styles -->
 
 </head>
@@ -374,120 +376,90 @@
 			<div class="techwave_fn_content">
 
 				<!-- PAGE (all pages go inside this div) -->
-				<div class="techwave_fn_page">
-
-					<!-- Image Generation Page -->
-					<div class="techwave_fn_image_generation_page">
-
-						<div class="generation__page">
-
-							<!-- Generation Header -->
-							<div class="generation_header">
-								<div class="header_top">
-									<div class="techwave_fn_pagetitle">
-										<h1 class="contact-heading">Locate Nearest Ayurvedic 🌿 Doctor <img src="svg/doctor-svgrepo-com.svg" class="doc-img" alt=""></h1>
-										<!-- <img src="svg/doctor-svgrepo-com.svg" alt=""> -->
-										<style>
-											.doc-img{
-												height: 65px;
-												width: 69px;
-											}
-										</style>
-										<style>
-											.contact-heading {
-												font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
-												
-											}
-										</style>
-									</div>
-								</div>
-								<div class="fn_contact_form">
-									<form action="#" method="post" class="contact_form" id="contact_form"
-										autocomplete="off">
-										<div class="input_list">
-											<ul>
-												<li>
-													<input id="name" type="text" placeholder="Locality Name*"
-														required />
-												</li>
-												<li>
-													<input id="tel" type="text" placeholder="PIN Code*" required />
-												</li>
-												<li class="hastiduniya">
-
-											<div class="mumle">
-												<a id="send_message" href="#" class="techwave_fn_button">
-													<span>Locate</span>
-												</a>
-											</div>
-											<style>
-												.mumle {
-													align-items: center;
-													justify-content: center;
-												}
-
-											
-											</style>
-												</li>
-
-											</ul>
-										</div>
-										<div class="returnmessage" data-success="Here's the Nearest Doctors</div>
-									<div class="empty_notice" ><span>! Please Fill Required Fields !</span></div>
-									</form>
-								</div>
-								<hr>
-								<div class="mt-10 aspect-video overflow-hidden rounded-lg lg:mt-14">
-									<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d448193.951046296!2d76.76356261822156!3d28.644287349748502!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x37205b715389640!2sDelhi!5e0!3m2!1sen!2sin!4v1719903567542!5m2!1sen!2sin" width="100%" height="400vh" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="h-full w-full object-cover"></iframe>
-								</div>
-
-							</div>
-							<!-- !Generation Header -->
-
-							
-
-						</div>
-
-						<div class="generation__sidebar">
-							<div class="sidebar_model">
-								<div class="fn__select_model">
-									<a class="model_open">
-										
-										<div class="author">
-											<style>
-												.title-h-mera{
-													color: rgb(14, 90, 14);
-													font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-													text-align: center;
-												}
-											</style>
-											
-											<h3 class="title-h-mera">Feedback</h3>
-										</div>									
-									</a>
-									
-								</div>
-							</div>
-							<div class="sidebar_details">
-								<p>Give Us your Valuable Feedback. This Helps us to Add New features into the application, and Improve Existing one.</p>
-								<div class="fn__token_info">
-									<a href="#" class="token_upgrade techwave_fn_button"><span>Feedback</span></a>
-									
-								</div>
-								<style>
-									.fn__token_info{
-										justify-content: center;
-									}
-								</style>
-
-							</div>
-						</div>
-
-
-					</div>
-					<!-- !Image Generation Page -->
-
-				</div>
+				 <div class="techwave_fn_page">
+            <div class="techwave_fn_image_generation_page">
+                <div class="generation__page">
+                    <div class="generation_header">
+                        <div class="header_top">
+                            <div class="techwave_fn_pagetitle">
+                                <h1 class="contact-heading">Locate Nearest Ayurvedic 🌿 Doctor <img src="svg/doctor-svgrepo-com.svg" class="doc-img" alt=""></h1>
+                                <style>
+                                    .doc-img{
+                                        height: 65px;
+                                        width: 69px;
+                                    }
+                                    .contact-heading {
+                                        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                                    }
+                                </style>
+                            </div>
+                        </div>
+                        <div class="fn_contact_form">
+                            <form action="#" method="post" class="contact_form" id="contact_form" autocomplete="off" onsubmit="return redirectToGoogleMaps()">
+                                <div class="input_list">
+                                    <ul>
+                                        <li>
+                                            <input id="locality" type="text" placeholder="Locality Name*" required />
+                                        </li>
+                                        <li>
+                                            <input id="pincode" type="text" placeholder="PIN Code*" required />
+                                        </li>
+                                        <li class="hastiduniya">
+                                            <div class="mumle">
+                                                <button type="submit" class="techwave_fn_button">
+                                                    <span>Locate</span>
+                                                </button>
+                                            </div>
+                                            <style>
+                                                .mumle {
+                                                    align-items: center;
+                                                    justify-content: center;
+                                                }
+                                            </style>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="returnmessage" data-success="Here's the Nearest Doctors"></div>
+                                <div class="empty_notice"><span>! Please Fill Required Fields !</span></div>
+                            </form>
+                        </div>
+                        <hr>
+                        <div class="mt-10 aspect-video overflow-hidden rounded-lg lg:mt-14">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d448193.951046296!2d76.76356261822156!3d28.644287349748502!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x37205b715389640!2sDelhi!5e0!3m2!1sen!2sin!4v1719903567542!5m2!1sen!2sin" width="100%" height="400vh" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="h-full w-full object-cover"></iframe>
+                        </div>
+                    </div>
+                </div>
+                <div class="generation__sidebar">
+                    <div class="sidebar_model">
+                        <div class="fn__select_model">
+                            <a class="model_open">
+                                <div class="author">
+                                    <style>
+                                        .title-h-mera{
+                                            color: rgb(14, 90, 14);
+                                            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                                            text-align: center;
+                                        }
+                                    </style>
+                                    <h3 class="title-h-mera">Feedback</h3>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="sidebar_details">
+                        <p>Give Us your Valuable Feedback. This Helps us to Add New features into the application, and Improve Existing one.</p>
+                        <div class="fn__token_info">
+                            <a href="#" class="token_upgrade techwave_fn_button"><span>Feedback</span></a>
+                            <style>
+                                .fn__token_info{
+                                    justify-content: center;
+                                }
+                            </style>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 				<!-- !PAGE (all pages go inside this div) -->
 
 
@@ -513,6 +485,23 @@
 
 			</div>
 			<!-- !CONTENT -->
+			<script>
+				function redirectToGoogleMaps() {
+					var locality = document.getElementById("locality").value;
+					var pincode = document.getElementById("pincode").value;
+					
+					if (locality && pincode) {
+						var query = encodeURIComponent("Ayurvedic Doctors near "  + locality + " " + pincode);
+						var mapsUrl = `https://www.google.com/maps/search/?api=1&query=${query}`;
+						
+						window.location.href = mapsUrl;
+					} else {
+						alert("Please fill in both fields.");
+					}
+		
+					return false; // Prevent form submission
+				}
+			</script>
 
 
 		</div>
